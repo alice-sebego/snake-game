@@ -14,22 +14,22 @@ window.onload = () => {
     myGame.init();
     
     document.addEventListener("keydown", (event) => {
-        const key = event.key;
+        const key = event.code;
         let newDirection;
         switch(key){
-            case 37:
+            case "ArrowLeft":
                 newDirection = "left";
                 break;
-            case 38:
+            case "ArrowUp":
                 newDirection = "up";
                 break;
-            case 39:
+            case "ArrowRight":
                 newDirection = "right";
                 break;
-            case 40:
+            case "ArrowDown":
                 newDirection = "down";
                 break;
-            case 32:
+            case "Space":
                 myGame.launch();
                 return;
             default:
@@ -82,7 +82,7 @@ class Game {
     init () {
         this.canvas.width = this.canvasWidth;
         this.canvas.height = this.canvasHeight;
-        this.canvas.style.border = "30px solid gray";
+        this.canvas.style.border = "30px solid #1B7DE7";
         this.canvas.style.margin = "50px auto";
         this.canvas.style.display = "block";
         this.canvas.style.backgroundColor = "#ddd";
@@ -268,8 +268,8 @@ class Drawing {
         
     static gameOver (ctx, centreX, centreY) {
         ctx.save();
-        ctx.font = "bold 70px sans-serif";
-        ctx.fillStyle = "#000";
+        ctx.font = "bold 5rem sans-serif";
+        ctx.fillStyle = "#3E6186";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.strokeStyle = "white";
@@ -284,8 +284,8 @@ class Drawing {
 
     static drawScore (ctx, score, centreX, centreY) {
         ctx.save();
-        ctx.font = "bold 200px sans-serif";
-        ctx.fillStyle = "gray";
+        ctx.font = "bold 10rem sans-serif";
+        ctx.fillStyle = "#1B7DE7";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
         ctx.fillText(score.toString(), centreX, centreY);
@@ -294,7 +294,7 @@ class Drawing {
 
     static drawSnake(ctx, blockSize, snake) {
         ctx.save();
-        ctx.fillStyle="#ff0000";
+        ctx.fillStyle="#C70039";
         for (let block of snake.body){
             this.drawBlock(ctx, block, blockSize);
         }
@@ -311,7 +311,7 @@ class Drawing {
         const x = apple.position[0]*blockSize + radius;
         const y = apple.position[1]*blockSize + radius;
         ctx.save();
-        ctx.fillStyle = "#33cc33";
+        ctx.fillStyle = "#3BBC1B";
         ctx.beginPath();
         ctx.arc(x, y, radius, 0, Math.PI*2, true);
         ctx.fill();

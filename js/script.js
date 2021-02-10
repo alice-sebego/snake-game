@@ -10,7 +10,7 @@ window.onload = () => {
         // if (event.preventDefaulted) {
         //     return; 
         // }
-        // event.preventDefault();    
+        event.preventDefault();    
      
         let newDirection;
         switch(event.code){
