@@ -2,15 +2,15 @@ export default class Drawing {
         
     static gameOver (ctx, centreX, centreY) {
         ctx.save();
-        ctx.font = "bold 70px sans-serif";
+        ctx.font = "bold 5rem sans-serif";
         ctx.fillStyle = "#3E6186";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "#ECF0F1";
         ctx.lineWidth = 5;
         ctx.strokeText("Game Over", centreX, centreY - 180);
         ctx.fillText("Game Over", centreX, centreY - 180);
-        ctx.font = "bold 30px sans-serif";
+        ctx.font = "bold 2rem sans-serif";
         ctx.strokeText("Appuyer sur la touche Espace pour rejouer", centreX, centreY - 120);
         ctx.fillText("Appuyer sur la touche Espace pour rejouer", centreX, centreY - 120);
         ctx.restore();

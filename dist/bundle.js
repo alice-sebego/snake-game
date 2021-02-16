@@ -272,11 +272,11 @@ class Drawing {
         ctx.fillStyle = "#3E6186";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.strokeStyle = "white";
+        ctx.strokeStyle = "#ddd";
         ctx.lineWidth = 5;
         ctx.strokeText("Game Over", centreX, centreY - 180);
         ctx.fillText("Game Over", centreX, centreY - 180);
-        ctx.font = "bold 30px sans-serif";
+        ctx.font = "bold 2rem sans-serif";
         ctx.strokeText("Appuyer sur la touche Espace pour rejouer", centreX, centreY - 120);
         ctx.fillText("Appuyer sur la touche Espace pour rejouer", centreX, centreY - 120);
         ctx.restore();
