@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import Game from './game.js';
 
 window.onload = () => {
@@ -7,9 +8,6 @@ window.onload = () => {
     
     document.addEventListener("keydown", event => {
         
-        // if (event.preventDefaulted) {
-        //     return; 
-        // }
         event.preventDefault();    
      
         let newDirection;
